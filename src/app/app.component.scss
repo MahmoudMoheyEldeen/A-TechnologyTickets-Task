@@ -10,16 +10,27 @@
     border-radius: 6px;
     padding: 13px 10px 13px 10px;
     background-color: #8A74F9;
-  }
+    transition: all .05s ease-in-out;
 
-  .btn-new-ticket {
     p {
       font-size: 12px;
       line-height: 24px;
       color: #FCFCFC;
       font-weight: 400;
     }
+
+    &:hover {
+      background-color: white;
+      border: 1px solid #8A74F9;
+      transform: scale(1.05);
+
+      p {
+        color: #8A74F9;
+      }
+    }
   }
+
+
 }
 
 :host ::ng-deep {
