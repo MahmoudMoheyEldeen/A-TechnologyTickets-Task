@@ -1,3 +1,51 @@
-<app-ticket-chart></app-ticket-chart>
-<app-ticket></app-ticket>
-<app-table></app-table>
+<div class="tickets-dashboard container-fluid">
+  <div class="row edit-back-row mt-lg-2">
+    <div class="col-md-6 d-flex">
+      <div class="back-icon-container d-flex justify-content-center align-items-center"
+        style="background-color: #E7EAED; border-radius: 8px; width: 32px; height: 32px;">
+        <img src="assets/icons/arrow-right.png" alt="">
+      </div>
+      <div class="ticket-number mx-2 ">
+        <p>تذكرة رقم #2342</p>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+      <div class="edit-container d-flex justify-content-center align-items-center"
+        style="background-color: #E9EAEA; border-radius: 8px; width: 78px; height: 34px;">
+        <div><img src="assets/icons/edit.png" style="width: 18px; height: 18px;" alt=""></div>
+        <p class="mx-1">تعديل</p>
+      </div>
+    </div>
+    <!-- <div class="col-lg-12   px-2">
+      <div class="bg-dark" style="min-height: 34px;">
+        edit-back
+      </div>
+    </div> -->
+  </div>
+  <div class="row tick-chart-row mt-2">
+    <div class="col-lg-9  px-2">
+      <div class="chart-card bg-dark" style="min-height: 264px;">
+        <app-ticket-chart></app-ticket-chart>
+      </div>
+    </div>
+    <div class="col-lg-3  px-2">
+      <div class="ticket-card bg-success" style="min-height: 264px;">
+        <app-ticket></app-ticket>
+      </div>
+    </div>
+  </div>
+  <div class="row tickets-sales-row mt-lg-2">
+    <div class="col-lg-12  px-2">
+      <div class="bg-dark" style="min-height: 35px;">
+        ticket-sales
+      </div>
+    </div>
+  </div>
+  <div class="row table-row mt-lg-2">
+    <div class="col-lg-12  px-2">
+      <div class="bg-success" style="min-height: 319px;">
+        <app-table></app-table>
+      </div>
+    </div>
+  </div>
+</div>

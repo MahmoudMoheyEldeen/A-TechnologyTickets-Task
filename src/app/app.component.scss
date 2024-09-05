@@ -1,0 +1,25 @@
+.tickets-dashboard {
+  direction: rtl;
+}
+
+.back-icon-container,
+.edit-container {
+  cursor: pointer;
+  transition: all .05s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &.edit-container p {
+    font-size: 14px;
+  }
+}
+
+p {
+  margin: 0;
+  font-family: 'Neo Sans Arabic';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+}
