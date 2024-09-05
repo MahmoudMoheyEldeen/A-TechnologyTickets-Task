@@ -1,0 +1,32 @@
+.ticket-card {
+  background-color: #8A74F9;
+
+  p.show-ticket-title {
+    font-family: 'Neo Sans Arabic';
+    font-weight: 500;
+    color: white;
+    font-size: 14px;
+    line-height: 16.8px;
+    margin: 0;
+  }
+
+  p.expire-date-note {
+    font-family: 'Neo Sans Arabic Regular';
+    font-weight: 400;
+    color: white;
+    font-size: 12px;
+    line-height: 14.35px;
+    margin: 0;
+  }
+}
+
+.subtract-circle::before {
+  content: "----------------------------------------";
+  font-size: 24px;
+  white-space: nowrap;
+  color: white;
+  position: absolute;
+  bottom: -5px;
+  left: 5px;
+
+}

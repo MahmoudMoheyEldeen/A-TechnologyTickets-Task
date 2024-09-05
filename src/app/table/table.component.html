@@ -1,4 +1,4 @@
-<p-table [value]="users | search: searchWord" [tableStyle]="{ 'min-width': '50rem' }" dataKey="id" [rows]="4"
+<p-table [value]="users | search: searchWord" [tableStyle]="{ 'min-width': '50rem' }" #dt1 dataKey="id" [rows]="4"
   [showCurrentPageReport]="true" [rowsPerPageOptions]="[10, 25, 50]" [paginator]="true"
   currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
   [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']">
