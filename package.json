@@ -21,6 +21,7 @@
     "angularx-qrcode": "^16.0.2",
     "bootstrap": "^4.6.2",
     "echarts": "^5.5.1",
+    "jquery": "^3.7.1",
     "ngx-bootstrap": "^4.3.0",
     "ngx-echarts": "^16.2.0",
     "ngx-filesaver": "^18.0.0",

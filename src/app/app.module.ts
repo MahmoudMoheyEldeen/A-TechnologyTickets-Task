@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { TicketChartComponent } from './ticket-chart/ticket-chart.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { TableComponent } from './table/table.component';
+import { SearchPipe } from './search.pipe';
+import { SearchService } from './services/search.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,8 +18,9 @@ import { TableComponent } from './table/table.component';
     TicketChartComponent,
     TicketComponent,
     TableComponent,
+    ReactiveFormsModule,
+    FormsModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
