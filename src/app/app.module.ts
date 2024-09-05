@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TicketChartComponent } from './ticket-chart/ticket-chart.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { TicketComponent } from './ticket/ticket.component';
     AppRoutingModule,
     TicketChartComponent,
     TicketComponent,
+    TableComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
