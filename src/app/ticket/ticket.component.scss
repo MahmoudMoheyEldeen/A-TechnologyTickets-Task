@@ -10,6 +10,27 @@
     margin: 0;
   }
 
+  .qr-code-container {
+    cursor: pointer;
+    transition: all .05s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .trash-icon {
+
+    img {
+      cursor: pointer;
+      transition: all .05s ease-in-out;
+
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+  }
+
   p.expire-date-note {
     font-family: 'Neo Sans Arabic Regular';
     font-weight: 400;
@@ -17,6 +38,42 @@
     font-size: 12px;
     line-height: 14.35px;
     margin: 0;
+  }
+
+  p.discount {
+    font-family: 'Neo Sans Arabic Regular';
+    font-weight: 400;
+    color: white;
+    font-size: 14px;
+    line-height: 16.74px;
+    margin: 0;
+  }
+
+  p.discountNo {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: white;
+    font-size: 18px;
+    line-height: 21.94px;
+    margin: 0;
+  }
+
+  button.share {
+    font-family: 'Neo Sans Arabic Regular';
+    font-weight: 400;
+    color: white;
+    font-size: 12px;
+    line-height: 14.4px;
+    margin: 0;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 4px, 6px, 4px, 6px;
+    transition: all .05s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 
