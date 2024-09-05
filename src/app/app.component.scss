@@ -1,9 +1,69 @@
 .tickets-dashboard {
   direction: rtl;
+  background-color: #f3f5f7;
+  ;
+}
+
+.tickets-sales-row {
+  button {
+    border: none;
+    border-radius: 6px;
+    padding: 13px 10px 13px 10px;
+    background-color: #8A74F9;
+  }
+
+  .btn-new-ticket {
+    p {
+      font-size: 12px;
+      line-height: 24px;
+      color: #FCFCFC;
+      font-weight: 400;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .p-inputswitch {
+    height: 1.125rem !important;
+    width: 2.125rem;
+    position: relative;
+    display: inline-block;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .p-inputswitch .p-inputswitch-slider {
+    background: #8A74F9;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-radius: 30px;
+  }
+
+  .active {
+    p {
+      margin: 0;
+      font-family: 'Neo Sans Arabic Regular';
+      font-size: 14px;
+      font-family: 400;
+      line-height: 16.74px;
+      color: #9C9D9F;
+    }
+  }
+
+  .p-inputswitch .p-inputswitch-slider:before {
+    background: #ffffff;
+    width: 0.877rem;
+    height: 0.877rem;
+    top: 0.72rem;
+    left: 0.10rem;
+    margin-top: -0.625rem;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+  }
 }
 
 .back-icon-container,
-.edit-container {
+.edit-container,
+.filter-icon-container {
   cursor: pointer;
   transition: all .05s ease-in-out;
 
@@ -15,6 +75,39 @@
     font-size: 14px;
   }
 }
+
+.search-card {
+  p {
+    margin: 0;
+    font-family: 'Neo Sans Arabic Regular';
+    font-size: 16px;
+    font-family: 400;
+    line-height: 19.14px;
+  }
+
+  .search {
+    input {
+      height: 2.25rem;
+      width: 17.313rem;
+      padding-right: 2rem;
+
+      &::placeholder {
+        text-align: right;
+        color: #92A1AD66;
+        font-family: 'Neo Sans Arabic';
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 11.96px;
+      }
+    }
+
+    img {
+      top: 10px;
+      right: 130px;
+    }
+  }
+}
+
 
 p {
   margin: 0;

@@ -9,6 +9,7 @@ import { TableComponent } from './table/table.component';
 import { SearchPipe } from './search.pipe';
 import { SearchService } from './services/search.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TableComponent,
     ReactiveFormsModule,
     FormsModule,
+    InputSwitchModule,
   ],
   bootstrap: [AppComponent],
 })
