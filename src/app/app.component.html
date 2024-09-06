@@ -1,9 +1,10 @@
-<div class="tickets-dashboard container-fluid">
+<div class="tickets-dashboard container-fluid" [ngStyle]="{'direction':selectedLanguage=='en'?'ltr':'rtl'}">
   <div class="row edit-back-row pt-3">
     <div class="col-6 d-flex ">
       <div class="back-icon-container  d-flex justify-content-center align-items-center"
         style="background-color: #E7EAED; border-radius: 8px; width: 32px; height: 32px;">
-        <img src="assets/icons/arrow-right.png" alt="">
+        <img [ngStyle]="{'transform':selectedLanguage=='en'?'rotateZ(180deg)':''}" src="assets/icons/arrow-right.png"
+          alt="">
       </div>
       <div class="ticket-number mx-md-2 mx-1  d-md-flex ">
         <p>{{"تذكرة رقم" | transloco}} #2342</p>
@@ -41,12 +42,13 @@
   </div>
   <div class="row tickets-sales-row mt-4">
     <div class="col-md-6  px-3">
-      <div class="search-card d-flex justify-content-lg-baseline justify-content-center">
+      <div class="search-card d-flex justify-content-lg-baseline justify-content-xs-center">
         <p class="mt-1">{{"مبيعات التذاكر" | transloco}}</p>
         <div class="search position-realtive mx-2">
-          <input #searchInput class="form-control position-realtive " placeholder="ابحث عن ..." type="search"
-            (input)="search(searchInput.value)">
-          <img class="position-absolute" src="../assets//icons/search-normal.png" alt="">
+          <input #searchInput class="form-control position-realtive " [placeholder]="'ابحث عن ...' | transloco"
+            type="search" (input)="search(searchInput.value)">
+          <img [ngStyle]="{'left':selectedLanguage=='en'?'110px':''}" class="position-absolute"
+            src="../assets//icons/search-normal.png" alt="">
         </div>
         <div class="filter-icon-container d-flex justify-content-center align-items-center"
           style="background-color: #ffffff; border-radius: 8px; width: 36px; height: 36px;">
