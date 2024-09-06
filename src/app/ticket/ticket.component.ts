@@ -11,6 +11,13 @@ import { QRCodeModule } from 'angularx-qrcode';
 })
 export class TicketComponent {
   copyCode(code: string) {
-    console.log('copied code', code);
+    navigator.clipboard
+      .writeText(code)
+      .then(() => {
+        console.log('Copied to clipboard:', code);
+      })
+      .catch((err) => {
+        console.error('Could not copy text: ', err);
+      });
   }
 }
