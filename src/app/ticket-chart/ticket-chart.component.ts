@@ -3,11 +3,19 @@ import { CommonModule } from '@angular/common';
 import * as echarts from 'echarts';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-ticket-chart',
   standalone: true,
-  imports: [CommonModule, DropdownModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    DropdownModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslocoDirective,
+    TranslocoPipe,
+  ],
   templateUrl: './ticket-chart.component.html',
   styleUrls: ['./ticket-chart.component.scss'],
 })

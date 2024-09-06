@@ -8,11 +8,14 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchService } from '../services/search.service';
 import { SearchPipe } from '../search.pipe';
+import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-table',
   standalone: true,
   imports: [
+    TranslocoDirective,
+    TranslocoPipe,
     SearchPipe,
     CommonModule,
     TableModule,

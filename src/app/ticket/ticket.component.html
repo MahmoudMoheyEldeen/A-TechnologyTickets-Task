@@ -3,7 +3,7 @@
   <div class="row delete-ticket position-relative pt-4" style="z-index: 99999;">
     <div class="col-2"></div>
     <div class="col-8 d-flex justify-content-center flex-column align-items-center">
-      <p class="show-ticket-title">عرض التذكرة الخاصة بالفيلم</p>
+      <p class="show-ticket-title">{{"عرض التذكرة الخاصة بالفيلم" | transloco}}</p>
       <div class="mt-4">
         <div class="input-container position-relative">
           <input #copyInput class="form-control position-realtive " type="search">
@@ -12,8 +12,8 @@
           <img (click)="copyCode(copyInput.value)" src="assets/icons/Group.png" alt="">
         </div>
       </div>
-      <p class="expire-date-note d-flex justify-content-center align-items-center  mt-2">فعال حتي 15 يوليو 2023
-      </p>
+      <p class="expire-date-note d-flex justify-content-center align-items-center  mt-2">{{"فعال حتي 15 يوليو 2023" |
+        transloco}}</p>
 
     </div>
     <div class="col-2 d-flex trash-icon position-relative">
@@ -37,13 +37,13 @@
     <div class="col-5 d-flex">
       <div class="pr-3 pt-3 ">
         <div class=" d-flex">
-          <p class="discount">خصم</p>
+          <p class="discount">{{"خصم" | transloco}}</p>
         </div>
         <div class="d-flex">
           <p class="discountNo pt-2">25%</p>
           <button class="share mx-3 d-flex justify-content-center align-items-center">
             <img class="ml-1" src="assets//icons/send-2.png" alt="">
-            مشاركة</button>
+            {{"مشاركة" | transloco}}</button>
         </div>
       </div>
     </div>
