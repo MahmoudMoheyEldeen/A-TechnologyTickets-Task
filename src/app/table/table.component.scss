@@ -41,11 +41,19 @@ tr {
   transition: all .05s ease-in-out;
 
   &:hover {
-    background-color: #8A74F9;
+    background-color: #8a74f97b;
     color: white;
 
     td p {
       color: white;
+    }
+
+    img {
+      transition: all .05s ease-in-out;
+
+      &:hover {
+        transform: scale(1.08);
+      }
     }
 
   }

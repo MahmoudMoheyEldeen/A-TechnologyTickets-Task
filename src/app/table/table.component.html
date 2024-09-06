@@ -8,7 +8,10 @@
         <th>#</th>
         <th>{{"المستخدم" | transloco}}</th>
         <th>{{"رقم التذكرة" | transloco}}</th>
-        <th>{{"قيمة التذكرة" | transloco}}</th>
+        <th>
+          {{"قيمة التذكرة" | transloco}}
+          <img src="assets/icons/arrow-3.png" alt="">
+        </th>
         <th>{{"السينمات" | transloco}}</th>
         <th>{{"عدد الأشخاص" | transloco}}</th>
         <th>{{"عدد مرات الشراء" | transloco}}</th>
@@ -34,7 +37,20 @@
         <td>{{ user.cienmaName }}</td>
         <td>{{ user.peopleNum }}</td>
         <td>{{ user.buyingNo }}</td>
-        <td>{{ user.ticket }}</td>
+        <!-- <td>{{ user.ticket }}</td> -->
+        <td class="ticket">
+          <div class="d-flex justify-content-center">
+            <div>
+              <img src="../../assets/icons/Frame 10.png" alt="">
+            </div>
+            <div class="mx-3">
+              {{ user.ticket }}
+            </div>
+            <div>
+              <img src="../../assets/icons/Group 1000010390.png" alt="">
+            </div>
+          </div>
+        </td>
       </tr>
     </ng-template>
   </p-table>
