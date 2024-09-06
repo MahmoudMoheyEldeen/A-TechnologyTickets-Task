@@ -9,4 +9,8 @@ import { QRCodeModule } from 'angularx-qrcode';
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.scss'],
 })
-export class TicketComponent {}
+export class TicketComponent {
+  copyCode(code: string) {
+    console.log('copied code', code);
+  }
+}

@@ -5,7 +5,12 @@
     <div class="col-8 d-flex justify-content-center flex-column align-items-center">
       <p class="show-ticket-title">عرض التذكرة الخاصة بالفيلم</p>
       <div class="mt-4">
-        <input #searchInput class="form-control position-realtive " type="search">
+        <div class="input-container position-relative">
+          <input #copyInput class="form-control position-realtive " type="search">
+        </div>
+        <div class="copy-container position-absolute">
+          <img (click)="copyCode(copyInput.value)" src="assets/icons/Group.png" alt="">
+        </div>
       </div>
       <p class="expire-date-note d-flex justify-content-center align-items-center  mt-2">فعال حتي 15 يوليو 2023
       </p>
