@@ -10,6 +10,9 @@ import { SearchPipe } from './search.pipe';
 import { SearchService } from './services/search.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslocoRootModule } from './transloco-root.module';
+import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +25,10 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     ReactiveFormsModule,
     FormsModule,
     InputSwitchModule,
+    HttpClientModule,
+    TranslocoRootModule,
+    TranslocoDirective,
+    TranslocoPipe,
   ],
   bootstrap: [AppComponent],
 })

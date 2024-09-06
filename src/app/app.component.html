@@ -10,11 +10,21 @@
       </div>
     </div>
     <div class="col-6 d-flex justify-content-end">
+      <div class="drop-down-div d-flex flex-column align-items-start mx-2 ">
+        <select [ngModel]="selectedLanguage" (change)="onLangChange($event)" class=""
+          style=" height: 1.893rem; width: 4.211rem; border:none; background-color: #E8E8E8; border-radius: 3px;"
+          name="" id="">
+          <option value="ar" selected>عربي</option>
+          <option value="en">English</option>
+        </select>
+
+      </div>
       <div class="edit-container d-flex justify-content-center align-items-center"
         style="background-color: #E9EAEA; border-radius: 8px; width: 78px; height: 34px;">
         <div><img src="assets/icons/edit.png" style="width: 18px; height: 18px;" alt=""></div>
-        <p class="mx-1">تعديل</p>
+        <p class="mx-1">{{"تعديل"| transloco}}</p>
       </div>
+
     </div>
   </div>
   <div class="row tick-chart-row mt-2">
