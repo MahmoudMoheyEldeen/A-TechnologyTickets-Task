@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchService } from '../services/search.service';
 import { SearchPipe } from '../search.pipe';
 import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
+import { PaginatorModule } from 'primeng/paginator';
 
 @Component({
   selector: 'app-table',
@@ -24,12 +25,14 @@ import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
     InputTextModule,
     ReactiveFormsModule,
     FormsModule,
+    PaginatorModule,
   ],
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
   searchWord: string = '';
+  rowsPerPage: number = 4;
   constructor(private _searchService: SearchService) {}
   ngOnInit(): void {
     this._searchService.getSearch().subscribe((word) => {
