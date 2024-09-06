@@ -3,6 +3,16 @@
   background-color: #8A74F9;
   transition: all .9s ease-in-out;
 
+  .card-pattern {
+    position: absolute;
+    background-image: url('../../assets/images/Mask\ group\ \(1\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
   p.show-ticket-title {
     font-family: 'Neo Sans Arabic';
@@ -25,6 +35,9 @@
   .trash-icon {
 
     img {
+      width: 22px;
+      height: 22px;
+      color: white;
       cursor: pointer;
       transition: all .05s ease-in-out;
 
@@ -81,12 +94,103 @@
 }
 
 .subtract-circle::before {
-  content: "----------------------------------------";
+  content: "---------------------------------------------------------------------------------------";
   font-size: 24px;
   white-space: nowrap;
   color: white;
   position: absolute;
   bottom: -5px;
   left: 5px;
+
+}
+
+
+
+@media (min-width: 440px) and (max-width: 1280px) {
+  input {
+    width: 500px;
+  }
+
+  .ticket-card {
+    p.show-ticket-title {
+      font-family: 'Neo Sans Arabic';
+      font-weight: 500;
+      color: white;
+      font-size: 20px;
+      line-height: 16.8px;
+      margin: 0;
+    }
+
+    .qr-code-container {
+      cursor: pointer;
+      transition: all .05s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .trash-icon {
+
+      img {
+
+        width: 33px;
+        height: 33px;
+        color: white;
+        cursor: pointer;
+        transition: all .05s ease-in-out;
+
+        &:hover {
+          transform: scale(1.08);
+        }
+      }
+    }
+
+    p.expire-date-note {
+      font-family: 'Neo Sans Arabic Regular';
+      font-weight: 400;
+      color: white;
+      font-size: 20px;
+      line-height: 14.35px;
+      margin: 0;
+    }
+
+    p.discount {
+      font-family: 'Neo Sans Arabic Regular';
+      font-weight: 400;
+      color: white;
+      font-size: 20px;
+      line-height: 16.74px;
+      margin: 0;
+    }
+
+    p.discountNo {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      color: white;
+      font-size: 25px;
+      line-height: 21.94px;
+      margin: 0;
+    }
+
+    button.share {
+      font-family: 'Neo Sans Arabic Regular';
+      font-weight: 400;
+      color: white;
+      font-size: 20px;
+      line-height: 14.4px;
+      margin: 0;
+      background-color: transparent;
+      border: 1px solid white;
+      border-radius: 4px;
+      padding: 8px, 10px, 8px, 10px;
+      transition: all .05s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
 
 }

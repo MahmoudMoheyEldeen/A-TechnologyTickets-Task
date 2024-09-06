@@ -42,6 +42,10 @@ select {
   right: 60px;
 }
 
+.chart {
+  width: 100%;
+  height: 260px;
+}
 
 
 @media(max-width:1280px) {
@@ -56,4 +60,5 @@ select {
     top: 5px;
     right: 20px;
   }
+
 }
