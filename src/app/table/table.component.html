@@ -47,7 +47,8 @@
               {{ user.ticket }}
             </div>
             <div>
-              <img src="../../assets/icons/Group 1000010390.png" alt="">
+              <img src="../../assets/icons/Group 1000010390.png" (click)="downloadImage(user.image, user.name +'.jpg')"
+                alt="">
             </div>
           </div>
         </td>

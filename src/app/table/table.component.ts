@@ -10,6 +10,8 @@ import { SearchService } from '../services/search.service';
 import { SearchPipe } from '../search.pipe';
 import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
 import { PaginatorModule } from 'primeng/paginator';
+import { FileSaverModule, FileSaverService } from 'ngx-filesaver';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-table',
@@ -26,6 +28,7 @@ import { PaginatorModule } from 'primeng/paginator';
     ReactiveFormsModule,
     FormsModule,
     PaginatorModule,
+    FileSaverModule,
   ],
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
@@ -33,7 +36,11 @@ import { PaginatorModule } from 'primeng/paginator';
 export class TableComponent implements OnInit {
   searchWord: string = '';
   rowsPerPage: number = 4;
-  constructor(private _searchService: SearchService) {}
+  constructor(
+    private _http: HttpClient,
+    private _searchService: SearchService,
+    private _fileSave: FileSaverService
+  ) {}
   ngOnInit(): void {
     this._searchService.getSearch().subscribe((word) => {
       this.searchWord = word;
@@ -150,4 +157,10 @@ export class TableComponent implements OnInit {
       rating: 3,
     },
   ];
+
+  downloadImage(imageUrl: string, imageName: string) {
+    this._http.get(imageUrl, { responseType: 'blob' }).subscribe((blob) => {
+      this._fileSave.save(blob, imageName);
+    });
+  }
 }
