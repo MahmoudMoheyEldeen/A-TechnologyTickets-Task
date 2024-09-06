@@ -1,9 +1,11 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import * as echarts from 'echarts';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
+import { TranslationService } from '../services/translation.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-ticket-chart',
@@ -19,12 +21,56 @@ import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
   templateUrl: './ticket-chart.component.html',
   styleUrls: ['./ticket-chart.component.scss'],
 })
-export class TicketChartComponent implements AfterViewInit {
-  chartDateType: string = '';
+export class TicketChartComponent implements AfterViewInit, OnDestroy {
+  selectedLanguage: string = '';
+  private langSubscription: Subscription = new Subscription();
+
+  constructor(private _trans: TranslationService) {
+    this.langSubscription = this._trans.selectedLanguage$.subscribe((lang) => {
+      this.selectedLanguage = lang;
+      console.log('this is lang from chart component', this.selectedLanguage);
+      this.renderChart(); // Re-render the chart when language changes
+    });
+  }
 
   ngAfterViewInit() {
+    this.renderChart(); // Initial chart render
+  }
+
+  renderChart() {
     const chartDom = document.getElementById('main')!;
     const myChart = echarts.init(chartDom);
+
+    const monthData =
+      this.selectedLanguage === 'ar'
+        ? [
+            'يناير',
+            'فبراير',
+            'مارس',
+            'إبريل',
+            'مايو',
+            'يونيو',
+            'يوليو',
+            'أغسطس',
+            'سبتمبر',
+            'أكتوبر',
+            'نوفمبر',
+            'ديسمبر',
+          ]
+        : [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec',
+          ];
 
     const option = {
       tooltip: {
@@ -64,20 +110,7 @@ export class TicketChartComponent implements AfterViewInit {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: [
-          'يناير',
-          'فبراير',
-          'مارس',
-          'إبريل',
-          'مايو',
-          'يونيو',
-          'يوليو',
-          'أغسطس',
-          'سبتمبر',
-          'أكتوبر',
-          'نوفمبر',
-          'ديسمبر',
-        ],
+        data: monthData, // Dynamic data based on selected language
         axisLabel: {
           formatter: function (value: string) {
             return value;
@@ -92,7 +125,7 @@ export class TicketChartComponent implements AfterViewInit {
       },
       series: [
         {
-          name: 'استخدام',
+          name: this.selectedLanguage === 'ar' ? 'استخدام' : 'Usage', // Change series name based on language
           type: 'line',
           smooth: true,
           data: [120, 132, 101, 134, 90, 230, 210, 250, 220, 240, 180, 150],
@@ -123,5 +156,10 @@ export class TicketChartComponent implements AfterViewInit {
     };
 
     option && myChart.setOption(option);
+  }
+
+  ngOnDestroy() {
+    // Unsubscribe to prevent memory leaks
+    this.langSubscription.unsubscribe();
   }
 }
