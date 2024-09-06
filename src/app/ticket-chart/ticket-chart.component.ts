@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class TicketChartComponent implements AfterViewInit {
   chartDateType: string = '';
+
   ngAfterViewInit() {
     const chartDom = document.getElementById('main')!;
     const myChart = echarts.init(chartDom);
@@ -20,8 +21,36 @@ export class TicketChartComponent implements AfterViewInit {
     const option = {
       tooltip: {
         trigger: 'axis',
+        backgroundColor: 'transparent',
+        shadowColor: 'rgba(0, 0, 0, 0)',
         axisPointer: {
           type: 'cross',
+        },
+        extraCssText:
+          'padding: 0; border: none; display:flex; width:100px;height:50px; justify-content:center; align-items:center;background-color:transparent;', // Remove padding and border
+        formatter: function (params: any) {
+          const tooltipHtml = `
+            <div style="background-image: url('assets/icons/Stat Container.png');
+                          background-size: auto;
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          width: 100px;
+                          height: fit-content;
+                          color: #fff;
+                          font-size: 12px;
+                          display: flex;
+                          flex-direction: row;
+                          flex-wrap: unwrap;
+                          align-items: center;
+                          justify-content: center;
+                          border-radius: 8px;
+                           padding: 50px;">
+              <strong>${params[0].name}</strong><br/>
+              ${params
+                .map((item: any) => `${item.seriesName}: ${item.value}`)
+                .join('<br/>')}
+            </div>`;
+          return tooltipHtml;
         },
       },
       xAxis: {
@@ -61,18 +90,9 @@ export class TicketChartComponent implements AfterViewInit {
           data: [120, 132, 101, 134, 90, 230, 210, 250, 220, 240, 180, 150],
           areaStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              {
-                offset: 0,
-                color: 'rgb(138, 116, 249)',
-              },
-              {
-                offset: 0.5,
-                color: 'rgba(138, 116, 249, 0.2637)',
-              },
-              {
-                offset: 1,
-                color: 'rgba(138, 116, 249, 0)',
-              },
+              { offset: 0, color: 'rgb(138, 116, 249)' },
+              { offset: 0.5, color: 'rgba(138, 116, 249, 0.2637)' },
+              { offset: 1, color: 'rgba(138, 116, 249, 0)' },
             ]),
           },
           emphasis: {
