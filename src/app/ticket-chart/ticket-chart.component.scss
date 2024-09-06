@@ -29,3 +29,31 @@ select {
   color: #1C1C28;
   margin: 0;
 }
+
+.drop-down-div {
+  position: absolute;
+  top: 5px;
+  left: 50px;
+}
+
+.date-for-expire {
+  position: absolute;
+  top: 5px;
+  right: 60px;
+}
+
+
+
+@media(max-width:1280px) {
+  .drop-down-div {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+  }
+
+  .date-for-expire {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+  }
+}
