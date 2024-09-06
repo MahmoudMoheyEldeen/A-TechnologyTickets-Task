@@ -11,26 +11,86 @@ import * as echarts from 'echarts';
 })
 export class TicketChartComponent implements AfterViewInit {
   ngAfterViewInit() {
-    var chartDom = document.getElementById('main');
-    var myChart = echarts.init(chartDom);
-    var option;
-    option = {
+    const chartDom = document.getElementById('main')!;
+    const myChart = echarts.init(chartDom);
+
+    const option = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+        },
+      },
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        data: [
+          'يناير',
+          'فبراير',
+          'مارس',
+          'إبريل',
+          'مايو',
+          'يونيو',
+          'يوليو',
+          'أغسطس',
+          'سبتمبر',
+          'أكتوبر',
+          'نوفمبر',
+          'ديسمبر',
+        ],
+        axisLabel: {
+          formatter: function (value: string) {
+            return value;
+          },
+        },
       },
       yAxis: {
         type: 'value',
+        axisLabel: {
+          show: false,
+        },
       },
       series: [
         {
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
+          name: 'استخدام',
           type: 'line',
-          areaStyle: {},
+          smooth: true,
+          data: [120, 132, 101, 134, 90, 230, 210, 250, 220, 240, 180, 150],
+          areaStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              {
+                offset: 0,
+                color: 'rgb(138, 116, 249)',
+              },
+              {
+                offset: 0.5,
+                color: 'rgba(138, 116, 249, 0.2637)',
+              },
+              {
+                offset: 1,
+                color: 'rgba(138, 116, 249, 0)',
+              },
+            ]),
+          },
+          emphasis: {
+            focus: 'series',
+          },
+          itemStyle: {
+            color: '#8e44ad', // Line color
+          },
+          lineStyle: {
+            width: 3,
+          },
         },
       ],
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true,
+      },
     };
+
     option && myChart.setOption(option);
   }
 }

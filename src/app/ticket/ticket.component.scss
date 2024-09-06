@@ -1,5 +1,8 @@
 .ticket-card {
+  cursor: pointer;
   background-color: #8A74F9;
+  transition: all .9s ease-in-out;
+
 
   p.show-ticket-title {
     font-family: 'Neo Sans Arabic';
