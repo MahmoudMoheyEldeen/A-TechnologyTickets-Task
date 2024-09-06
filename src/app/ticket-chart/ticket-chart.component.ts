@@ -1,15 +1,18 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import * as echarts from 'echarts';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-ticket-chart',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DropdownModule, FormsModule, ReactiveFormsModule],
   templateUrl: './ticket-chart.component.html',
   styleUrls: ['./ticket-chart.component.scss'],
 })
 export class TicketChartComponent implements AfterViewInit {
+  chartDateType: string = '';
   ngAfterViewInit() {
     const chartDom = document.getElementById('main')!;
     const myChart = echarts.init(chartDom);
