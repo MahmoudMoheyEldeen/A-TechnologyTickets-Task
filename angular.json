@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": ["file-saver", "sweetalert2"],
-            "outputPath": "dist/a-technology-tickets-task",
+            "outputPath": "dist/A-TechnologyTickets-Task/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -96,6 +96,61 @@
             "styles": ["src/styles.scss"],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/A-TechnologyTickets-Task/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "A-TechnologyTickets-Task:build:development",
+              "serverTarget": "A-TechnologyTickets-Task:server:development"
+            },
+            "production": {
+              "browserTarget": "A-TechnologyTickets-Task:build:production",
+              "serverTarget": "A-TechnologyTickets-Task:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "A-TechnologyTickets-Task:build:production",
+              "serverTarget": "A-TechnologyTickets-Task:server:production"
+            },
+            "development": {
+              "browserTarget": "A-TechnologyTickets-Task:build:development",
+              "serverTarget": "A-TechnologyTickets-Task:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
