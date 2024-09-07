@@ -8,7 +8,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchService } from '../services/search.service';
 import { SearchPipe } from '../search.pipe';
+
 import {
+  TRANSLOCO_CONFIG,
+  TRANSLOCO_LOADER,
   TranslocoDirective,
   TranslocoModule,
   TranslocoPipe,
@@ -16,6 +19,7 @@ import {
 import { PaginatorModule } from 'primeng/paginator';
 import { FileSaverModule, FileSaverService } from 'ngx-filesaver';
 import { HttpClient } from '@angular/common/http';
+import { TranslocoHttpLoader } from '../transloco-loader';
 
 @Component({
   selector: 'app-table',
@@ -37,6 +41,21 @@ import { HttpClient } from '@angular/common/http';
   ],
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
+  providers: [
+    {
+      provide: TRANSLOCO_CONFIG,
+      useValue: {
+        availableLangs: ['en', 'ar'],
+        defaultLang: 'ar',
+        fallbackLang: 'ar',
+        reRenderOnLangChange: true,
+      },
+    },
+    {
+      provide: TRANSLOCO_LOADER,
+      useClass: TranslocoHttpLoader,
+    },
+  ],
 })
 export class TableComponent implements OnInit {
   searchWord: string = '';
