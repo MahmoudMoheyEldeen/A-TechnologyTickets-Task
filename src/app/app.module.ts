@@ -42,21 +42,5 @@ import { TranslocoHttpLoader } from './transloco-loader';
   ],
 
   bootstrap: [AppComponent],
-  providers: [
-    {
-      provide: TRANSLOCO_CONFIG,
-      useValue: {
-        availableLangs: ['en', 'ar'],
-        defaultLang: 'ar', // Default language is English
-        fallbackLang: 'ar', // Fallback to English
-        reRenderOnLangChange: true,
-        prodMode: environment.production,
-      },
-    },
-    {
-      provide: TRANSLOCO_LOADER,
-      useClass: TranslocoHttpLoader,
-    },
-  ],
 })
 export class AppModule {}
