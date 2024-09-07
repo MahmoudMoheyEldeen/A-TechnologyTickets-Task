@@ -50,7 +50,7 @@ export class TableComponent implements OnInit {
   users: any[] = [
     {
       id: '1',
-      name: 'أحمد محمود',
+      name: 'احمد محمود',
       phone: '01012929213',
       image: 'assets/images/Group 1000009196.png',
       ticketNo: 'C-101',

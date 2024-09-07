@@ -62,3 +62,23 @@ select {
   }
 
 }
+
+@media(max-width: 340px) {
+  .date-for-expire p {
+    font-family: 'Neo Sans Arabic Regular';
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12.9px;
+    color: #1C1C28;
+    margin: 0;
+
+    &.date {
+      font-family: 'Neo Sans Arabic Regular';
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 12.9px;
+      color: #99A1B7;
+      margin: 0;
+    }
+  }
+}

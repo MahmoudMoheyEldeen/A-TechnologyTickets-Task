@@ -39,10 +39,10 @@
   <div class="row qr-code-row position-relative mt-4 pt-3" style="z-index: 99999;">
     <div class="col-5 d-flex">
       <div class="pr-3 pt-3 ">
-        <div class=" d-flex">
+        <div class=" d-flex" [ngStyle]="{'margin-left':selectedLanguage=='en'?'10px':''}">
           <p class="discount">{{"خصم" | transloco}}</p>
         </div>
-        <div class="d-flex">
+        <div class="d-flex" [ngStyle]="{'margin-left':selectedLanguage=='en'?'15px':''}">
           <p class="discountNo pt-2">25%</p>
           <button class="share mx-3 d-flex justify-content-center align-items-center">
             <img class="ml-1" src="assets//icons/send-2.png" alt="">

@@ -4,6 +4,21 @@
   ;
 }
 
+.table-row {
+  margin-bottom: 0px;
+}
+
+.drop-down-div {
+  transition: all .05s ease-in-out;
+
+  select {
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
 
 .tickets-sales-row {
   button {
@@ -157,6 +172,86 @@ p {
       input {
         height: 2.25rem;
         width: 14.313rem;
+        padding-right: 2rem;
+
+        &::placeholder {
+          text-align: right;
+          color: #92A1AD66;
+          font-family: 'Neo Sans Arabic';
+          font-size: 10px;
+          font-weight: 400;
+          line-height: 11.96px;
+        }
+      }
+
+      img {
+        top: 10px;
+        right: 90px;
+      }
+    }
+  }
+
+  .tickets-sales-row {
+    button {
+      border: none;
+      border-radius: 6px;
+      padding: 13px 10px 13px 10px;
+      background-color: #8A74F9;
+      transition: all .05s ease-in-out;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      p {
+        font-size: 12px;
+        line-height: 10px;
+        color: #FCFCFC;
+        font-weight: 400;
+      }
+
+      &:hover {
+        background-color: white;
+        border: 1px solid #8A74F9;
+        transform: scale(1.05);
+
+        p {
+          color: #8A74F9;
+        }
+      }
+    }
+
+
+  }
+
+}
+
+@media(max-width:340px) {
+  .table-row {
+    margin-bottom: 10px;
+  }
+
+  .ticket-number {
+    display: flex;
+    flex-direction: row;
+
+    p {
+      font-size: 10px;
+    }
+  }
+
+  .search-card {
+
+
+    p {
+      margin: 0;
+      font-family: 'Neo Sans Arabic Regular';
+      font-size: 10px;
+      font-family: 400;
+    }
+
+    .search {
+      input {
+        height: 2.25rem;
+        width: 10rem;
         padding-right: 2rem;
 
         &::placeholder {

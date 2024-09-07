@@ -161,6 +161,23 @@ input {
       margin: 0;
     }
 
+    .copy-container {
+      position: absolute;
+      left: 40px;
+      top: 45px;
+
+      img {
+        cursor: pointer;
+        width: 11.9px;
+        height: 14.14px;
+        transition: all .05s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
     .qr-code-container {
       cursor: pointer;
       transition: all .05s ease-in-out;
@@ -230,6 +247,14 @@ input {
         transform: scale(1.05);
       }
     }
+  }
+
+
+}
+
+@media(max-width: 340px) {
+  .qr-code-container {
+    margin-left: 5px;
   }
 
 
