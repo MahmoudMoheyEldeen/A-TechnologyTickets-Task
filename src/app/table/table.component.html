@@ -20,30 +20,30 @@
     </ng-template>
     <ng-template pTemplate="body" let-user>
       <tr>
-        <td>{{ user.id }}</td>
+        <td tooltipPosition="top" pTooltip="{{user.id}}">{{ user.id }}</td>
         <td class="d-flex justify-content-center ">
           <div class="d-flex">
             <div class="user-profile mt-1 mx-1">
               <img [src]="user.image" alt="">
             </div>
             <div class="name-phone">
-              <p class="name">{{user.name}}</p>
-              <p class="phone">{{user.phone}}</p>
+              <p class="name" tooltipPosition="top" pTooltip="{{user.name}}">{{user.name}}</p>
+              <p class="phone" tooltipPosition="top" pTooltip="{{user.phone}}">{{user.phone}}</p>
             </div>
           </div>
         </td>
-        <td>{{ user.ticketNo }}</td>
-        <td>{{ user.ticketValue }}</td>
-        <td>{{ user.cienmaName }}</td>
-        <td>{{ user.peopleNum }}</td>
-        <td>{{ user.buyingNo }}</td>
+        <td tooltipPosition="top" pTooltip="{{user.ticketNo}}">{{ user.ticketNo }}</td>
+        <td tooltipPosition="top" pTooltip="{{user.ticketValue}}">{{ user.ticketValue }}</td>
+        <td tooltipPosition="top" pTooltip="{{user.cienmaName}}">{{ user.cienmaName }}</td>
+        <td tooltipPosition="top" pTooltip="{{user.peopleNum}}">{{ user.peopleNum }}</td>
+        <td tooltipPosition="top" pTooltip="{{user.buyingNo}}">{{ user.buyingNo }}</td>
         <!-- <td>{{ user.ticket }}</td> -->
         <td class="ticket">
           <div class="d-flex justify-content-center">
             <div>
               <img src="../../assets/icons/Frame 10.png" alt="">
             </div>
-            <div class="mx-3">
+            <div class="mx-3" tooltipPosition="top" pTooltip="{{user.ticket}}">
               {{ user.ticket }}
             </div>
             <div>
