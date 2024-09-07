@@ -12,11 +12,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
+import { environment } from '../environments/environment';
+
 import {
+  TRANSLOCO_CONFIG,
+  TRANSLOCO_LOADER,
   TranslocoDirective,
   TranslocoModule,
   TranslocoPipe,
 } from '@jsverse/transloco';
+import { TranslocoHttpLoader } from './transloco-loader';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,5 +42,21 @@ import {
   ],
 
   bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: TRANSLOCO_CONFIG,
+      useValue: {
+        availableLangs: ['en', 'ar'],
+        defaultLang: 'en', // Default language is English
+        fallbackLang: 'en', // Fallback to English
+        reRenderOnLangChange: true,
+        prodMode: environment.production,
+      },
+    },
+    {
+      provide: TRANSLOCO_LOADER,
+      useClass: TranslocoHttpLoader,
+    },
+  ],
 })
 export class AppModule {}
