@@ -12,7 +12,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
-import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
+import {
+  TranslocoDirective,
+  TranslocoModule,
+  TranslocoPipe,
+} from '@jsverse/transloco';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +33,9 @@ import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
     TranslocoRootModule,
     TranslocoDirective,
     TranslocoPipe,
+    TranslocoModule,
   ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

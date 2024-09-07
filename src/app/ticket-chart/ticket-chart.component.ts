@@ -3,7 +3,11 @@ import { CommonModule } from '@angular/common';
 import * as echarts from 'echarts';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
+import {
+  TranslocoDirective,
+  TranslocoModule,
+  TranslocoPipe,
+} from '@jsverse/transloco';
 import { TranslationService } from '../services/translation.service';
 import { Subscription } from 'rxjs';
 
@@ -17,6 +21,7 @@ import { Subscription } from 'rxjs';
     ReactiveFormsModule,
     TranslocoDirective,
     TranslocoPipe,
+    TranslocoModule,
   ],
   templateUrl: './ticket-chart.component.html',
   styleUrls: ['./ticket-chart.component.scss'],

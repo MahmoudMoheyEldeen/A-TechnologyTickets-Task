@@ -8,7 +8,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchService } from '../services/search.service';
 import { SearchPipe } from '../search.pipe';
-import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
+import {
+  TranslocoDirective,
+  TranslocoModule,
+  TranslocoPipe,
+} from '@jsverse/transloco';
 import { PaginatorModule } from 'primeng/paginator';
 import { FileSaverModule, FileSaverService } from 'ngx-filesaver';
 import { HttpClient } from '@angular/common/http';
@@ -17,6 +21,7 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-table',
   standalone: true,
   imports: [
+    TranslocoModule,
     TranslocoDirective,
     TranslocoPipe,
     SearchPipe,
@@ -64,7 +69,7 @@ export class TableComponent implements OnInit {
       id: '2',
       name: 'محمد الغريب',
       phone: '01012929213',
-      image: '../../assets/images/Image-30.png',
+      image: 'assets/images/Image-30.png',
       ticketNo: 'C-101',
       ticketValue: '30$',
       cienmaName: 'سينما مصر , مول العرب , برج الأطنان , سرايا القبة ...',
@@ -76,7 +81,7 @@ export class TableComponent implements OnInit {
       id: '3',
       name: 'محمد الغريب',
       phone: '01012929213',
-      image: '../../assets/images/Image-31.png',
+      image: 'assets/images/Image-31.png',
       ticketNo: 'C-101',
       ticketValue: '30$',
       cienmaName: 'سينما مصر , مول العرب , برج الأطنان , سرايا القبة ...',
@@ -88,7 +93,7 @@ export class TableComponent implements OnInit {
       id: '4',
       name: 'محمد الغريب',
       phone: '01012929213',
-      image: '../../assets/images/Group 1000009196 (1).png',
+      image: 'assets/images/Group 1000009196 (1).png',
       ticketNo: 'C-101',
       ticketValue: '30$',
       cienmaName: 'سينما مصر , مول العرب , برج الأطنان , سرايا القبة ...',

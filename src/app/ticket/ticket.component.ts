@@ -1,14 +1,24 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QRCodeModule } from 'angularx-qrcode';
-import { TranslocoDirective, TranslocoPipe } from '@jsverse/transloco';
+import {
+  TranslocoDirective,
+  TranslocoModule,
+  TranslocoPipe,
+} from '@jsverse/transloco';
 import { TranslationService } from '../services/translation.service';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ticket',
   standalone: true,
-  imports: [CommonModule, QRCodeModule, TranslocoDirective, TranslocoPipe],
+  imports: [
+    CommonModule,
+    QRCodeModule,
+    TranslocoDirective,
+    TranslocoPipe,
+    TranslocoModule,
+  ],
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.scss'],
 })
