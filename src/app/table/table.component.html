@@ -33,10 +33,10 @@
           </div>
         </td>
         <td tooltipPosition="top" pTooltip="{{user.ticketNo}}">{{ user.ticketNo }}</td>
-        <td tooltipPosition="top" pTooltip="{{user.ticketValue}}">{{ user.ticketValue }}</td>
-        <td tooltipPosition="top" pTooltip="{{user.cienmaName}}">{{ user.cienmaName }}</td>
+        <td tooltipPosition="top" pTooltip="{{user.ticketValue}}">{{ user.ticketValue}}</td>
+        <td tooltipPosition="top" pTooltip="{{user.cienmaName}}">{{ user.cienmaName | transloco }}</td>
         <td tooltipPosition="top" pTooltip="{{user.peopleNum}}">{{ user.peopleNum }}</td>
-        <td tooltipPosition="top" pTooltip="{{user.buyingNo}}">{{ user.buyingNo }}</td>
+        <td tooltipPosition="top" pTooltip="{{user.buyingNo}}">{{ user.buyingNo | transloco }}</td>
         <!-- <td>{{ user.ticket }}</td> -->
         <td class="ticket">
           <div class="d-flex justify-content-center">
@@ -44,7 +44,7 @@
               <img src="../../assets/icons/Frame 10.png" alt="">
             </div>
             <div class="mx-3" tooltipPosition="top" pTooltip="{{user.ticket}}">
-              {{ user.ticket }}
+              {{ user.ticket|transloco }}
             </div>
             <div>
               <img src="../../assets/icons/Group 1000010390.png" (click)="downloadImage(user.image, user.name +'.jpg')"
