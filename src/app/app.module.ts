@@ -47,8 +47,8 @@ import { TranslocoHttpLoader } from './transloco-loader';
       provide: TRANSLOCO_CONFIG,
       useValue: {
         availableLangs: ['en', 'ar'],
-        defaultLang: 'en', // Default language is English
-        fallbackLang: 'en', // Fallback to English
+        defaultLang: 'ar', // Default language is English
+        fallbackLang: 'ar', // Fallback to English
         reRenderOnLangChange: true,
         prodMode: environment.production,
       },
