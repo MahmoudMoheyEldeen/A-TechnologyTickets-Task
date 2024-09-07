@@ -61,9 +61,34 @@ tr {
 
 :host ::ng-deep {
   .p-datatable .p-paginator-bottom {
-    display: none;
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    left: 0;
     border-width: 0 0 1px 0;
     border-radius: 0;
+  }
+
+  .p-dropdown .p-dropdown-trigger {
+    background: transparent;
+    display: none;
+    color: #6c757d;
+    width: 3rem;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  .p-paginator .p-dropdown .p-dropdown-label {
+    padding-right: 0;
+    display: none;
+  }
+
+  .p-paginator .p-dropdown {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    height: 3rem;
+    display: none;
   }
 }
 
